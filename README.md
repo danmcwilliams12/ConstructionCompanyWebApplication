@@ -5,7 +5,7 @@ During the last two weeks of my time at the tech academy, I worked with fellow s
 
 ### Shift Time Checker Method
 
-Toward the end of my time on the project, the model for jobs was updated to include a ShiftTime class that included the days of the week and the start time for each shift.  In this story, I was tasked with creating a method in the jobs controller that would check to see if the job passed into it possesed any non default shift times, set all default times to null, save changes to the DB and return a bool value.
+Toward the end of my time on the project, the model for jobs was updated to include a ShiftTime class that included the days of the week and the start time for each shift.  In this story, I was tasked with creating a method in the jobs controller that would check to see if the job passed into it possesed any non default shift times, set all default times to null, save changes to the DB and return a bool value.  Since the infrastructure needed to use this method was not yet in place I needed to include a job from seed data for testing purposes.
 
 ```
 [HttpPost]
