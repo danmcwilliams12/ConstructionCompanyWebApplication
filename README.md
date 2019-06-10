@@ -140,4 +140,4 @@ Then saved the changes to the DB.
 * Maintained close communication with team members working on related stories to minimize merge conflicts and resolve them properly when encountered.
 * Sought clarification from project manager when desied result of a story was not initaially clear.
 * Worked with troubleshooting a SignalR chat message system.
-* 
+* Researched previously unencountered technologies and implemented them in my code.
