@@ -41,3 +41,25 @@ Toward the end of my time on the project, the model for jobs was updated to incl
             return hasNonDefault;
         }
 ```
+### User Suspension Schedule Managment
+
+Website users that become suspended may have schedules that they are currently on that need to end immediately and future schedules that must be deleted.  This story required a popup to fire when an admin attempted to suspend a user confirming the suspension or unsuspension as well as warning that the user's schedules will be removed.  First, I created the logic in the partial view's GET method to determine what popups would fire for each user.
+
+```
+public ActionResult _UserListPartial()
+        {
+            //Queries to determine what pop-up shows on suspension submission
+            var currentFutureUsers = (from u in db.Users
+                                      join s in db.Schedules on u.Id equals s.Person.Id
+                                      where s.EndDate > DateTime.Now
+                                      select u).Distinct().ToList();
+            ViewBag.currentFutureUsers = currentFutureUsers;
+
+            var suspendedUsers = (from a in db.Users
+                                      where a.Suspended
+                                      select a).ToList();
+            ViewBag.SuspendedUsers = suspendedUsers;
+
+            return PartialView(db.Users.AsEnumerable());
+        }
+```
