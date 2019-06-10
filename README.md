@@ -43,7 +43,7 @@ Toward the end of my time on the project, the model for jobs was updated to incl
 ```
 ### User Suspension Schedule Managment
 
-Website users that become suspended may have schedules that they are currently on that need to end immediately and future schedules that must be deleted.  This story required a popup to fire when an admin attempted to suspend a user confirming the suspension or unsuspension as well as warning that the user's schedules will be removed.  First, I created the logic in the partial view's GET method to determine what popups would fire for each user.
+Website users that become suspended may have schedules that they are currently on that need to end immediately and future schedules that must be deleted.  This story required a popup to fire when an admin attempted to suspend a user confirming the suspension or unsuspension as well as warning that the user's schedules will be removed.  First, I sorted users in the partial view's GET method to determine what popups would fire for each user.
 
 ```
 public ActionResult _UserListPartial()
